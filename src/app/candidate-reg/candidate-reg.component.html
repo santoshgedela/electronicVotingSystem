@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                  alt="Sample photo" class="img-fluid" style="
+                    border-top-left-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                  " />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h4 class="mb-5 text-uppercase">
+                    Candidate registration form
+                  </h4>
+                  <form [formGroup]="registrationForm">
+                    <div class="row">
+                      <div class="form-outline mb-4 form">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter UserName" formControlName="username" />
+
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['username']?.['pristine']) || (registrationFormErrors?.['username']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['username']?.errors?.['required']">**UserName is
+                            required**</label>
+                          <label for="" *ngIf="registrationFormErrors?.['username']?.errors?.['minlength']">UserName
+                            should be min 6 characters</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-outline mb-4 form">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter FullName" formControlName="fullname" />
+
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['fullname']?.['pristine']) || (registrationFormErrors?.['fullname']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['fullname']?.errors?.['required']">**FullName is
+                            required**</label>
+                          <label for="" *ngIf="registrationFormErrors?.['fullname']?.errors?.['minlength']">FullName
+                            should be min 6 characters</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter Email" formControlName="email_id" />
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['email_id']?.['pristine']) || (registrationFormErrors?.['email_id']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['email_id']?.errors?.['required']">**Email is
+                            required**</label>
+                          <label for="" *ngIf="registrationFormErrors?.['email_id']?.errors?.['email_id']">**Email is
+                            not valid**</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example97" class="form-control form-control-lg"
+                        placeholder="Enter Password" formControlName="password" />
+                      <div class="error"
+                        *ngIf="(!registrationFormErrors?.['password']?.['pristine']) || (registrationFormErrors?.['password']?.['touched'])">
+                        <label for="" *ngIf="registrationFormErrors?.['password']?.errors?.['required']">**Password is
+                          required**</label>
+                        <label for="" *ngIf="registrationFormErrors?.['password']?.errors?.['minlength']">Password
+                          should be min 8 characters</label>
+                        <label for="" *ngIf="registrationFormErrors?.['password']?.errors?.['pattern']">Password must
+                          contain at least one uppercase letter,
+                          one alphanumeric character, and one special
+                          character.</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-outline mb-4">
+                        <input type="date" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter DOB" formControlName="dob" />
+
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['dob']?.['pristine']) || (registrationFormErrors?.['dob']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['dob']?.errors?.['required']">**DOB is
+                            required**</label>
+                            <label for=""
+                            *ngIf="registrationFormErrors?.['age']?.errors?.['min']">**Age must
+                            be 18 or
+                            older**</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-outline mb-4">
+                        <input type="number" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter Age" formControlName="age" readonly/>
+
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['age']?.['pristine']) || (registrationFormErrors?.['age']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['age']?.errors?.['required']">**Age is
+                            required**</label>
+                            <label for=""
+                            *ngIf="registrationFormErrors?.['age']?.errors?.['min']">**Age must
+                            be 18 or older**</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example97" class="form-control form-control-lg"
+                          placeholder="Enter VoterId" formControlName="voter_id" />
+
+                        <div class="error"
+                          *ngIf="(!registrationFormErrors?.['voter_id']?.['pristine']) || (registrationFormErrors?.['voter_id']?.['touched'])">
+                          <label for="" *ngIf="registrationFormErrors?.['voter_id']?.errors?.['required']">**Voter Id is
+                            required**</label>
+                          <label for="" *ngIf="registrationFormErrors?.['voter_id']?.errors?.['pattern']">Voter ID
+                            should be in the format:
+                            'HHH1234567'.</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline mb-4 pt-3">
+                      <button type="button" class="btn btn-warning btn-lg ms-2" (click)="submit()"
+                        [routerLink]="['/login']">
+                        Submit form
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

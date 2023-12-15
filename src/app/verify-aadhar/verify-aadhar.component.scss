@@ -1,0 +1,41 @@
+.eVote-wrapper {
+  background: linear-gradient(270deg, #d7e9f5 0%, #fff 54.51%);
+  // height: 100vh;
+}
+.eVote-header {
+  main {
+    width: 638px;
+    height: 63px;
+    display: flex;
+    
+    
+  }
+
+  .content {
+    display: flex;
+    width: 523px;
+    height: 220px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+  }
+}
+
+
+.error{
+  label{
+    color: red;
+    font-size: 14px;
+  }
+}
+
+.login-button{
+
+  .login-btn{
+    font-size: 15px;
+    margin-left: 120px;
+    
+    cursor: pointer;
+  }
+}

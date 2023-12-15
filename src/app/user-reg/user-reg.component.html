@@ -1,0 +1,189 @@
+<div class="container-fluid">
+    <section class="vh-100" style="background-color: #eee">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                                        UserRegistration
+                                    </p>
+
+
+                                    <form class="mx-1 mx-md-4" [formGroup]="registrationForm">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <input type="text" id="form3Example1c" class="form-control"
+                                                    formControlName="username" placeholder="Enter UserName" />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['username']?.['pristine']) || (registerFormErrors?.['username']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['username']?.errors?.['required']">**Name
+                                                        is
+                                                        required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['username']?.errors?.['minlength']">Name
+                                                        should be min 6 characters</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <input type="text" id="form3Example1c" class="form-control"
+                                                    formControlName="fullname" placeholder="Enter FullName" />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['fullname']?.['pristine']) || (registerFormErrors?.['fullname']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['fullname']?.errors?.['required']">**FullName
+                                                        is
+                                                        required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['fullname']?.errors?.['minlength']">FullName
+                                                        should be min 6 characters</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <input type="email" id="form3Example3c" class="form-control"
+                                                    formControlName="email_id" placeholder="Enter Email" />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['email_id']?.['pristine']) || (registerFormErrors?.['email_id']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['email_id']?.errors?.['required']">**Email
+                                                        is required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['email_id']?.errors?.['email_id']">**Email
+                                                        is
+                                                        not valid**</label>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <input [type]="fieldTextType ? 'text' : 'password'" id="form3Example4c"
+                                                    class="form-control" formControlName="password"
+                                                    placeholder="Enter Password" />
+
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['password']?.['pristine']) || (registerFormErrors?.['password']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['password']?.errors?.['required']">**Password
+                                                        is required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['password']?.errors?.['minlength']">Password
+                                                        should be min 8 characters</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['password']?.errors?.['pattern']">Password
+                                                        must contain at least one uppercase letter, one alphanumeric
+                                                        character, and one special character.</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-calendar-days fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="date" id="form3Example1c" class="form-control"
+                                                    formControlName="dob" placeholder="Enter DOB" />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['dob']?.['pristine']) || (registerFormErrors?.['dob']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['dob']?.errors?.['required']">**DOB
+                                                        is
+                                                        required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['dob']?.errors?.['pattern']">**Invalid
+                                                        date
+                                                        format**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['age']?.errors?.['min']">**Age must
+                                                        be 18 or
+                                                        older**</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-birthday-cake fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="number" id="form3Example1c" class="form-control"
+                                                    formControlName="age" placeholder="Enter Age" readonly />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['age']?.['pristine']) || (registerFormErrors?.['age']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['age']?.errors?.['required']">**Age
+                                                        is
+                                                        required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['age']?.errors?.['min']">**Age must
+                                                        be 18 or
+                                                        older**</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-address-card fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <input type="text" id="form3Example4cd" class="form-control"
+                                                    formControlName="voter_id" placeholder="Enter VoterId" />
+                                                <div class="error"
+                                                    *ngIf="(!registerFormErrors?.['voter_id']?.['pristine']) || (registerFormErrors?.['voter_id']?.['touched'])">
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['voter_id']?.errors?.['required']">**Voter
+                                                        Id is required**</label>
+                                                    <label for=""
+                                                        *ngIf="registerFormErrors?.['voter_id']?.errors?.['pattern']">Voter
+                                                        ID should be in the format: 'HHH1234567'.</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-primary btn-lg" (click)="register()"
+                                                [routerLink]="['/login']" [disabled]="registrationForm.invalid">
+                                                Register
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        class="img-fluid" alt="Sample image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

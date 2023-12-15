@@ -1,0 +1,21 @@
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th>candidateName</th>
+        <th>election_name</th>
+        <th>party_name</th>
+        <th>party_symbol</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.candidateName }}</td>
+        <td>{{ candidate.election_name }}</td>
+        <td>{{ candidate.party_name }}</td>
+        <td>{{ candidate.party_symbol }}</td>
+        <td><button (click)="vote(candidate)">Vote</button></td>
+      </tr>
+    </tbody>
+  </table>
+  

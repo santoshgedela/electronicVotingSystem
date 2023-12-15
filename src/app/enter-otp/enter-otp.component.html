@@ -1,0 +1,22 @@
+<div class="otp-wrapper">
+  <div class="container">
+    <form [formGroup]="otpForm">
+      <div class="main">
+        <div class="form-group mb-2">
+          <label for="otp">Enter OTP:</label>
+          <input class="form-control" formControlName="otp" id="otp" type="text" required>
+
+          <div class="error" *ngIf="(!otpFormErrors?.['otp']?.['pristine']) || (otpFormErrors?.['otp']?.['touched'])">
+            <label for="" *ngIf="otpFormErrors?.['otp']?.errors?.['required']">**otp is required**</label>
+            <label for="" *ngIf="otpFormErrors?.['otp']?.errors?.['minlength']">**otp must be 4 digits**</label>
+          </div>
+        </div>
+        <div class="otp-button">
+          <button class="btn btn-success otp-btn" (click)="verifyOTP()" [disabled]="otpForm.invalid">
+            Verify OTP
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

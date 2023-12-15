@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Nominated Candidates - Admin Panel</h2>
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>Candidate Name</th>
+          <th>Election Name</th>
+          <th>Party Name</th>
+          <th>Party Symbol</th>
+          <th>Status</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidate of candidates">
+          <td>{{ candidate.candidateName }}</td>
+          <td>{{ candidate.election_name }}</td>
+          <td>{{ candidate.party_name }}</td>
+          <td>{{ candidate.party_symbol }}</td>
+          <td>{{ candidate.status === 1 ? 'Approved' : 'Pending Approval' }}</td>
+          <td>
+            <button *ngIf="candidate.status === 0" class="btn btn-success btn-sm" (click)="approveCandidate(candidate)">
+              Approve
+            </button>
+        
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
